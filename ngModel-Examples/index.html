@@ -1,0 +1,21 @@
+<html ng-app="ngModelExamples">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+       
+     
+    </head>
+    <body ng-controller="exampleController">
+            <h1>NgModel Examples</h1>
+            <div>
+            <p>Enter the name<input type="text" ng-model="textString"></input></p>
+            <p>Are you interested in Angular JS? <input type="checkbox" ng-model="checkboxString"></input></p>
+            <p>Date :<input type="date" ng-model="dateString"></input></p>
+            <div>
+            <div>
+                <p>The text String is : {{textString}}</input></p>
+                <p>The checkbox string is : {{checkboxString}}</input></p>
+                <p>Date :{{dateString}}</input></p>
+            </div>
+    </body>
+</html>

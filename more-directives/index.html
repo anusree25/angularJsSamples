@@ -1,0 +1,36 @@
+<html ng-app="moreDirectivesApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" type="text/css" href="app.css">
+
+</style>
+    </head>
+    <body>
+        <h1>More Directives App</h1>
+        <div ng-controller="moreDirectivesController as md">
+                <table >
+                        <tr>
+                            <td>index</td>
+                            <td>first</td>
+                            <td>last</td>
+                            <td>even</td>
+                            <td>odd</td>
+                            <td>Name</td>
+                            <td>Age</td>
+                        </tr>
+                        <tr ng-repeat="obj in md.myList">
+                            <td>{{$index}}</td>
+                            <td>{{$first}}</td>
+                            <td>{{$last}}</td>
+                            <td>{{$even}}</td>
+                            <td>{{$odd}}</td>
+                            <td>{{obj.name}}</td>
+                            <td>{{obj.age}}</td>              
+                        </tr>
+                    </table>
+                </p>
+        </div>
+
+    </body>
+</html>

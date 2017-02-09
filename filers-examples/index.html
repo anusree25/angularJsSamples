@@ -1,0 +1,36 @@
+<html ng-app="filterApp">
+
+<head>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href=app.css></link>
+
+    <body ng-controller="filterAppCtrlr as fa">
+        <!-- Rows to Display :<input type="number" step="1" min="0" max="5" ng-model=" fa.rowLimit"/>-->
+        Order By : <select ng-model="fa.sortColumn">{{fa.sortColumn}}>
+                        <option ng-selected="fa.sortColumn" ng-repeat="property in fa.properties" value="{{property.id}}">{{property.value}}</option>;
+                </select>
+        <table>
+            <thead>
+                <th ng-click="fa.sortData('name')">
+                    <div ng-class="fa.arrowClass"></div>Name</th>
+                <th ng-click="fa.sortData('date')">
+                    <div ng-class="fa.arrowClass"></div>Date</th>
+                <th ng-click="fa.sortData('gender')">
+                    <div ng-class="fa.arrowClass"></div>Gender</th>
+                <th ng-click="fa.sortData('salary')">
+                    <div ng-class="fa.arrowClass"></div>Salary</th>
+                <!-- <th>Salary</th>-->
+            </thead>
+            <tr ng-repeat="employee in fa.employees | orderBy:fa.sortColumn:fa.ascending">
+                <td>{{employee.name | uppercase}}</td>
+                <td>{{employee.date | date:'dd/MM/yyyy'}}</td>
+                <td>{{employee.gender | lowercase}}</td>
+                <td>{{employee.salary | number}}</td>
+                <!--<td>{{employee.salary | currency:'Rs ':0}}</td>-->
+            </tr>
+        </table>
+
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+<html ng-app="nestedControllers">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body> 
+        <div ng-controller="controller1 as c1" >
+          <p> {{c1.testProp}}</p>
+           <div ng-controller="controller2 as c2">
+                 <p> {{c2.testProp}}</p>
+            </div> 
+        </div>  
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html ng-app="httpServiceApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="httpServiceAppController as hs">
+        <h1>http service example</h1>
+        <h2>Todo App<h2>
+            <input type="Text" ng-model="hs.todo"></input>
+            <ol>
+                <li ng-repeat="todo in hs.todos">
+                    {{Todo}}
+                </li>
+            </ol>
+
+    </body>
+</html>

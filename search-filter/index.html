@@ -1,0 +1,32 @@
+<html ng-app="filterApp">
+
+<head>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href=app.css></link>
+   
+    <body ng-controller="filterAppCtrlr as fa">
+        Search By:<p>
+                    <input type="text" ng-model="fa.searchFilter.name"></input>
+                    <input type="text" ng-model="fa.searchFilter.designation"></input>
+                    <input type="checkbox" ng-model="exactMatch"
+                    </p>
+        </br></br>
+        <table>
+            <thead>
+                <th> Name</th>
+                <th> Designation</th>
+                <th> Gender</th>
+                <th> Location</th>
+            </thead>
+            <tr ng-repeat="employee in fa.employees | filter:fa.searchFilter:exactMatch">
+                <td>{{employee.name | uppercase}}</td>
+                <td>{{employee.designation | date:'dd/MM/yyyy'}}</td>
+                <td>{{employee.gender | gender}}</td>
+                <td>{{employee.city | uppercase}}</td>
+            </tr>
+        </table>
+
+    </body>
+
+</html>

@@ -1,0 +1,25 @@
+<html ng-app="todoApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="todoAppController as td">
+        <h1>Todo App</h1>
+        <p>Add a ToDo</p>
+        <p>
+            <input type="text" ng-model="td.todo"></input>
+            <button ng-click="td.addTodo()">Add</button>   
+        </p>
+        <button ng-hide="td.editMode" ng-click="td.editTodo()">Edit</button>
+        <button ng-show="td.editMode" ng-click="td.editTodo()">Done</button>
+        <table>
+            <tr ng-if="td.todoList.length > 0"><td>Your todos :</td></tr>
+            <tr ng-repeat="todo in td.todoList track by $index">
+                <td>{{$index+1}}.</td>
+                <td ng-hide="td.editMode" ng-bind="todo"></td>
+                <td ng-show="td.editMode"><input type="text" ng-model="todo"></input></td>
+                <td ng-hide="td.editMode"><button ng-click="td.deleteTodo($index)">Delete</button></td>
+            <tr>      
+        </div>
+    </body>
+</html> 
